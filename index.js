@@ -78,8 +78,7 @@ app.use("/auth", authRoutes);
 app.use("/private", privateRoutes);
 app.use("/add", addRoutes);
 app.use("/applications", applicationsRoutes);
-// app.use("/books", booksRoutes);
-// app.use("/book", bookRoutes);
+app.use("/books", booksRoutes);
 
 // Запуск сервера =====================================================================================================================================================================================================
 // определение порта
