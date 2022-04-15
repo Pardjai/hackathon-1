@@ -15,13 +15,19 @@
          {{else}}
          <li><a href="/add">Добавить книгу</a></li>
          {{/if}}
+         {{#if isBooks}}
+         <li class="active"><a href="/books">Книги</a></li>
+         {{else}}
+         <li><a href="/books">Книги</a></li>
+         {{/if}}
 
          {{#if isAuth}}
 
-         {{#if isPrivate}}
-         <li class="active"><a href="/private">Private</a></li>
+
+         {{#if idApplications}}
+         <li class="active"><a href="/applications">Заявки</a></li>
          {{else}}
-         <li><a href="/private">Private</a></li>
+         <li><a href="/applications">Заявки</a></li>
          {{/if}}
 
          <li><a href="auth/logout">Выйти</a></li>

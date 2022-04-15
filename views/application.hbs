@@ -1,9 +1,23 @@
 <div class="application">
-   <form action="application">
-       <input type="text" name="title" value="{{title}}">
-       <input type="text" name="author" value="{{author}}">
-       <input type="text" name="url">
-       <input type="hidden" name="userId" value="{{userId}}">
-       <button type="submit">Одобрить</button>
+   <form action="/applications/{{application._id}}" method="POST">
+        <div class="input-field">
+      <input id="title" name="title" type="text" class="validate" required value="{{application.title}}">
+      <label for="title">Название книги</label>
+      <span class="helper-text" data-error="Введите название книги"></span>
+   </div>
+   <div class="input-field">
+      <input id="author" name="author" type="text" class="validate" required min="1" value="{{application.author}}">
+      <label for="author">Автор книги</label>
+      <span class="helper-text" data-error="Введите автора книги"></span>
+   </div>
+   <div class="input-field">
+      <input id="url" name="url" type="text" class="validate" required>
+      <label for="url">Url книги</label>
+      <span class="helper-text" data-error="Введите url"></span>
+   </div>
+
+   <input type="hidden" name="_csrf" value="{{csurf}}">
+
+   <button type="submit" class="btn">Одобрить</button>
    </form>
 </div>

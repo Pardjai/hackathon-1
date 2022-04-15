@@ -21,13 +21,12 @@ router.post('/', async (req, res) => {
    })
 
    try {
-      console.log(application);
       await application.save()
       smtpTransport.sendMail(addEmail(email, title), (err, res) => {
          err ? console.log(err) :
          smtpTransport.close()
       })
-      res.redirect('/applications')
+      res.redirect('/')
    } catch (err) {
       console.log(err)
    }

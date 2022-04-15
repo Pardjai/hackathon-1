@@ -69,8 +69,7 @@ const authRoutes = require("./routes/auth");
 const privateRoutes = require('./routes/private')
 const addRoutes = require('./routes/add')
 const applicationsRoutes = require('./routes/applications')
-// const booksRoutes = require('./routes/books')
-// const bookRoutes = require('./routes/book')
+const booksRoutes = require('./routes/books')
 
 // подключение обработчиков GET-запросов
 app.use("/", homeRoutes);
