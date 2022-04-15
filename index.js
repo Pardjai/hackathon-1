@@ -67,11 +67,19 @@ app.use(flash())
 const homeRoutes = require("./routes/home");
 const authRoutes = require("./routes/auth");
 const privateRoutes = require('./routes/private')
+const addRoutes = require('./routes/add')
+const applicationsRoutes = require('./routes/applications')
+// const booksRoutes = require('./routes/books')
+// const bookRoutes = require('./routes/book')
 
 // подключение обработчиков GET-запросов
 app.use("/", homeRoutes);
 app.use("/auth", authRoutes);
 app.use("/private", privateRoutes);
+app.use("/add", addRoutes);
+app.use("/applications", applicationsRoutes);
+// app.use("/books", booksRoutes);
+// app.use("/book", bookRoutes);
 
 // Запуск сервера =====================================================================================================================================================================================================
 // определение порта

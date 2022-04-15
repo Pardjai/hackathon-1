@@ -8,6 +8,7 @@ const resetEmail = require('../emails/mailOptions/reset')
 
 router.get("/login", (req, res) => {
    res.render("auth/login", {
+      isLogin: true,
       title: "Авторизация",
       error: req.flash('error')
    });

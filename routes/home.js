@@ -6,6 +6,7 @@ const router = Router()
 /* обработака http-запросов */
 router.get('/', (req, res) => {
     res.render('index', {
+        isHome: true,
         title: 'Страница'
     })
 })

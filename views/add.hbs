@@ -1,0 +1,24 @@
+{{!-- подобная форма также есть на странице редактирования курса (course-edit.hbs) --}}
+<h1>Добавить книгу</h1>
+
+<form action="/add" method="POST">
+   <div class="input-field">
+      <input id="title" name="title" type="text" class="validate" required value="{{data.title}}">
+      <label for="title">Название книги</label>
+      <span class="helper-text" data-error="Введите название книги"></span>
+   </div>
+   <div class="input-field">
+      <input id="author" name="author" type="text" class="validate" required min="1" value="{{data.author}}">
+      <label for="author">Автор книги</label>
+      <span class="helper-text" data-error="Введите автора книги"></span>
+   </div>
+   <div class="input-field">
+      <input id="email" name="email" type="text" class="validate" required value="{{data.email}}">
+      <label for="email">Ваш email</label>
+      <span class="helper-text" data-error="Введите email"></span>
+   </div>
+
+   <input type="hidden" name="_csrf" value="{{csurf}}">
+
+   <button type="submit" class="btn">Добавить книгу</button>
+</form>

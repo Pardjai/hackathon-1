@@ -1,0 +1,67 @@
+<nav>
+   <div class="nav-wrapper">
+      
+      <a href="/" class="brand-logo">CoursesCollect</a>
+      <a data-target="side-out" class="sidenav-trigger"><i class="fa fa-bars fa-lg"></i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+         {{#if isHome}}
+         <li class="active"><a href="/">Главная</a></li>
+         {{else}}
+         <li><a href="/">Главная</a></li>
+         {{/if}}
+
+         {{#if isAdd}}
+         <li class="active"><a href="/add">Добавить книгу</a></li>
+         {{else}}
+         <li><a href="/add">Добавить книгу</a></li>
+         {{/if}}
+
+         {{#if isAuth}}
+
+         {{#if isPrivate}}
+         <li class="active"><a href="/private">Private</a></li>
+         {{else}}
+         <li><a href="/private">Private</a></li>
+         {{/if}}
+
+         <li><a href="auth/logout">Выйти</a></li>
+
+         {{else}}
+         {{#if isLogin}}
+         <li class="active"><a href="/auth/login#login">Вход</a></li>
+         {{else}}
+         <li><a href="/auth/login#login">Вход</a></li>
+         {{/if}}
+
+         {{/if}}
+      </ul>
+   </div>
+   
+</nav>
+
+<ul id="side-out" class="sidenav">
+            {{#if isHome}}
+         <li class="active"><a href="/">Главная</a></li>
+         {{else}}
+         <li><a href="/">Главная</a></li>
+         {{/if}}
+
+         {{#if isAuth}}
+
+         {{#if isPrivate}}
+         <li class="active"><a href="/private">Private</a></li>
+         {{else}}
+         <li><a href="/private">Private</a></li>
+         {{/if}}
+
+         <li><a href="auth/logout">Выйти</a></li>
+
+         {{else}}
+         {{#if isLogin}}
+         <li class="active"><a href="/auth/login#login">Вход</a></li>
+         {{else}}
+         <li><a href="/auth/login#login">Вход</a></li>
+         {{/if}}
+
+         {{/if}}
+  </ul>

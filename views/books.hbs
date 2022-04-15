@@ -1,0 +1,23 @@
+<h1 class="offset-s1">Курсы</h1>
+
+<div id="books">
+   {{#if books.length}}
+   {{#each books}}
+   <div class="row">
+      <div class="card-container">
+         <div class="card">
+            <div class="card-content">
+               <h2 class="card-title">{{title}}</h2>
+               <span class="author">{{author}}</span>
+            </div>
+            <div class="card-action actions-btn">
+               <a href="{{src}}" target="_blank">Открыть</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   {{/each}}
+   {{else}}
+   <p>Книг пока нет</p>
+   {{/if}}
+</div>

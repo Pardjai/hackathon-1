@@ -1,0 +1,23 @@
+<h1 class="offset-s1">Заявки</h1>
+
+<div id="applications">
+   {{#if applications.length}}
+   {{#each applications}}
+   <div class="row">
+      <div class="card-container">
+         <div class="card">
+            <div class="card-content">
+               <h2 class="card-title">{{title}}</h2>
+               <span >{{email}}</span>
+            </div>
+            <div class="card-action actions-btn">
+               <a href="/applications/{{id}}" target="_blank">Открыть</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   {{/each}}
+   {{else}}
+   <p>Заявок пока нет</p>
+   {{/if}}
+</div>
