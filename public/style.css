@@ -22,7 +22,7 @@ body{
 body > .container{
     width: 100%;
     padding: 50px;
-    background: url('/images/54545454.jpg');
+    background: #726e6e;
     background-size: cover;
 
     margin-bottom: auto;
