@@ -38,6 +38,9 @@
          
          <div class="section">
             <li><a href="/settings">Настройки</a></li>
+            {{#if isAuth}}
+               <li class="logout"><a href="auth/logout"><b>Выйти</b></a></li>
+            {{/if}}
          </div>
       </ul>
 
