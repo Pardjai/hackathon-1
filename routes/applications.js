@@ -26,7 +26,6 @@ router.get('/:id', auth, async (req, res) => {
         const application = await Application.findById(req.params.id) // findByID соответственно находит курс в базе по его id
   
         res.render('application', {
-           layout: 'application',
            title: application.title,
            application,
         })
@@ -37,14 +36,17 @@ router.get('/:id', auth, async (req, res) => {
 })
 
 router.post('/:id',  async (req, res) => {
-   const {title, author, url} = req.body
-   console.log(req.body)
+   const {title, author, genre, url} = req.body
    const book = new Book({
       title,
       author,
+      genre,
       url,
    })
    try {
+      await Application.deleteOne({
+         _id: req.params.id
+      })
       await book.save()
       res.redirect('/')
    } catch (err) {

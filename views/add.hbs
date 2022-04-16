@@ -3,17 +3,29 @@
 
 <form action="/add" method="POST">
    <div class="input-field">
-      <input id="title" name="title" type="text" class="validate" required value="{{data.title}}">
+      <input id="title" name="title" type="text" class="validate" required>
       <label for="title">Название книги</label>
       <span class="helper-text" data-error="Введите название книги"></span>
    </div>
+    <div class="input-field col s12">
+    <select name="genre">
+      <option value="Детектив" selected>Детектив</option>
+      <option value="Фантастика">Фантастика</option>
+      <option value="Роман">Роман</option>
+      <option value="Приключения">Приключения</option>
+      <option value="Учебная книга">Учебная книга</option>
+      <option value="Поэзия">Поэзия</option>
+      <option value="Детские">Детские</option>
+    </select>
+    <label>Выбор жанра</label>
+  </div>
    <div class="input-field">
-      <input id="author" name="author" type="text" class="validate" required min="1" value="{{data.author}}">
+      <input id="author" name="author" type="text" class="validate" required>
       <label for="author">Автор книги</label>
       <span class="helper-text" data-error="Введите автора книги"></span>
    </div>
    <div class="input-field">
-      <input id="email" name="email" type="text" class="validate" required value="{{data.email}}">
+      <input id="email" name="email" type="text" class="validate" required>
       <label for="email">Ваш email</label>
       <span class="helper-text" data-error="Введите email"></span>
    </div>

@@ -9,6 +9,10 @@ const bookSchema = new Schema({
       type: String,
       required: true,
    },
+   genre: {
+      type: String,
+      required: true,
+   },
    url: {
        type: String,
        required: true

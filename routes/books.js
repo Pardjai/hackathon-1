@@ -6,7 +6,6 @@ router.get('/', async (req, res) => {
    try {
       const books = await Book.find() // если параметры метода find не заданы, он возвращает вообще все данные из базы (в данном случае все курсы, заменяя метод getAll использованный в прошлом проекте ("part 3-1") для работы с файловым хранилищем данных)
          .select('title author url')
-
       res.render('books', {
          title: 'Книги',
          isBooks: true,
@@ -25,11 +24,26 @@ router.get('/:id', async (req, res) => {
       res.render('book', {
          title: book.title,
          author: book.author,
+         genre: book.genre,
          url: book.url
       })
    } catch (e) {
       console.log(e)
    }
+})
+
+router.post('/search', async (req, res) => {
+   try{
+      const candidateBooks = await Book.find({title : req.body.title})
+   res.render('books', {
+      title: 'Книги',
+         isBooks: true,
+         books: candidateBooks,
+   })
+   } catch(e){
+      console.log(e);
+   }
+   
 })
 
 module.exports = router

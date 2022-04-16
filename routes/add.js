@@ -12,11 +12,12 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-   const {title, author, email} = req.body
+   const {title, author, email, genre} = req.body
    const application = new Application({
       title,
       author,
       email,
+      genre,
       userId: req.user, // можно записать 'req.user'. т.к. в модели application (models/application) полю userId задан тип ObjectId, и mongoose сам  подставит туда id
    })
 

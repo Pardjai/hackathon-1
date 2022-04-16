@@ -60,4 +60,6 @@ window.onload = function () {
    }
 
    M.Tabs.init(document.querySelectorAll(".tabs"));
+   var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, {});
 };
