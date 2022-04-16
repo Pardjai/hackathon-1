@@ -3,19 +3,7 @@
       
       <a href="/" class="brand-logo"><img src="/images/logo.jpg" alt="logo"/></a>
       <a data-target="side-out" class="sidenav-trigger"><i class="fa fa-bars fa-lg"></i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-         {{#if isHome}}
-         <li class="active"><a href="/">Главная</a></li>
-         {{else}}
-         <li><a href="/">Главная</a></li>
-         {{/if}}
-
-        
-         {{#if isBooks}}
-         <li class="active"><a href="/books">Книги</a></li>
-         {{else}}
-         <li><a href="/books">Книги</a></li>
-         {{/if}}
+      <ul class="right hide-on-med-and-down">
 
          {{#if isAuth}}
 
@@ -25,19 +13,9 @@
          <li><a href="/profile">Профиль</a></li>
          {{/if}}
 
-          {{#if isAdd}}
-         <li class="active"><a href="/add">Добавить книгу</a></li>
-         {{else}}
-         <li><a href="/add">Добавить книгу</a></li>
-         {{/if}}
+          
 
-          {{#if isInteractives}}
-         <li class="active"><a href="/interactives">Интерактивы</a></li>
-         {{else}}
-         <li><a href="/interactives">Интерактивы</a></li>
-         {{/if}}
-
-         {{#if idApplications}}
+         {{#if isApplications}}
          <li class="active"><a href="/applications">Заявки</a></li>
          {{else}}
          <li><a href="/applications">Заявки</a></li>

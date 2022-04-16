@@ -81,6 +81,7 @@ const verifRoutes = require('./routes/verification')
 const interactiveRoutes = require('./routes/interactives')
 const firstStepsRoutes = require('./routes/firstSteps')
 const contractRoutes = require('./routes/contract')
+const settingRoutes = require('./routes/settings')
 
 // подключение обработчиков GET-запросов
 app.use("/", homeRoutes);
@@ -94,6 +95,7 @@ app.use("/verification", verifRoutes);
 app.use("/interactives", interactiveRoutes);
 app.use("/firstSteps", firstStepsRoutes);
 app.use("/contract", contractRoutes);
+app.use("/settings", settingRoutes);
 
 // Запуск сервера =====================================================================================================================================================================================================
 // определение порта
