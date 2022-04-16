@@ -77,3 +77,8 @@ form *{
 .page-footer, nav{
     background-color: #212121 ;
 }
+
+#accessCheckbox{
+    display: inline-block;
+    margin-bottom: 3rem;
+}
