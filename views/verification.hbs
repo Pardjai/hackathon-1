@@ -1,0 +1,33 @@
+<p>Чтобы стать автором загрузите своё фото с паспартом. На фото должно быть видно ваше лицо, номер и серию паспорта, фотографию паспорта</p>
+<div class="col s6">
+      <form action="/verification" method="POST" enctype="multipart/form-data">
+
+         <div class="file-field input-field">
+            <div class="btn">
+               <span>Загрузить фото</span>
+               <input type="file" name="verifPhoto">
+               <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            </div>
+            
+            <div class="file-path-wrapper">
+               <input class="file-path validate" type="text">
+            </div>
+         </div>
+
+         <div class="file-field input-field">
+            <div class="btn">
+
+               <span>Загрузить фото</span>
+               <input type="file" name="verifPhoto">
+               <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            </div>
+            
+            <div class="file-path-wrapper">
+               <input class="file-path validate" type="text">
+            </div>
+         </div>
+
+         <input type="hidden" name="_csrf" value="{{csurf}}">
+
+         <button type="submit" class="btn">Отправить на модерацию</button>
+      </form>

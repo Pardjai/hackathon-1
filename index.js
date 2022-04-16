@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require('connect-mongodb-session')(session)
 const varMiddleware = require("./middlewares/variables");
+const fileMiddleware = require("./middlewares/file");
+const verifFileMiddleware = require("./middlewares/verifFile");
 const csurf = require('csurf')
 const flash = require('connect-flash')
 
@@ -28,6 +30,7 @@ const hbs = exphbs.create({
    defaultLayout: "main",
    extname: "hbs",
    handlebars: allowInsecurePrototypeAccess(Handlebars), //для устранения ошибки при взаимодействии Handlebars и mongoos
+   helpers: require('./utils/hbs-helpers'),
 });
 
 // внедрение handlebars в app
@@ -37,6 +40,7 @@ app.set("views", "views");
 
 // статические папки
 app.use("/books", express.static(path.join(__dirname, "books")));
+app.use('/images', express.static(path.join(__dirname, 'images')))
 app.use(express.static(path.join(__dirname, "public"))); //задаёт 'public' как статическую папку для обращения через "/"
 
 
@@ -56,9 +60,11 @@ app.use(
       store
    })
 );
-
+app.use('/verification', verifFileMiddleware.array('verifPhoto'))
+app.use('/profile', fileMiddleware.single('avatar'))
 app.use(csurf())
 // Middlewares =====================================================================================================================================================================================================
+
 app.use(varMiddleware);
 app.use(flash())
 
@@ -70,6 +76,9 @@ const privateRoutes = require('./routes/private')
 const addRoutes = require('./routes/add')
 const applicationsRoutes = require('./routes/applications')
 const booksRoutes = require('./routes/books')
+const profileRoutes = require('./routes/profile')
+const verifRoutes = require('./routes/verification')
+const interactiveRoutes = require('./routes/interactives')
 
 // подключение обработчиков GET-запросов
 app.use("/", homeRoutes);
@@ -78,6 +87,9 @@ app.use("/private", privateRoutes);
 app.use("/add", addRoutes);
 app.use("/applications", applicationsRoutes);
 app.use("/books", booksRoutes);
+app.use("/profile", profileRoutes);
+app.use("/verification", verifRoutes);
+app.use("/interactives", interactiveRoutes);
 
 // Запуск сервера =====================================================================================================================================================================================================
 // определение порта

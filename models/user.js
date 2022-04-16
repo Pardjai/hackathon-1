@@ -11,6 +11,9 @@ const userSchema = new Schema({
       type: String,
       required: true,
    },
+   avatarUrl: String,
+   isAuthor: Boolean,
+   isModerator: Boolean,
 });
 
 module.exports = model("User", userSchema);

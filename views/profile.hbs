@@ -1,0 +1,46 @@
+<h1>Профиль</h1>
+
+<div class="profile-form">
+   <div class="col s6 avatar-container">
+      {{#if user.avatarUrl}}
+      <img class="avatar" src="/{{user.avatarUrl}}" alt="аватар-{{user.name}}">
+      {{else}}
+      <p>Аватара нет</p>
+      {{/if}}
+   </div>
+
+   <div class="col s6">
+      <form action="/profile" method="POST" enctype="multipart/form-data">
+         <p>Ваш email: <strong>{{user.email}}</strong></p>
+         <div class="input-field">
+            <input id="name" name="name" type="text" class="validate" required value="{{user.name}}">
+            <label for="name">Имя</label>
+            <span class="helper-text" data-error='Поле "имя" не может быть пустым'></span>
+         </div>
+
+         <div class="file-field input-field">
+            <div class="btn">
+               <span>Загрузить аватар</span>
+               <input type="file" name="avatar">
+               <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            </div>
+            
+            <div class="file-path-wrapper">
+               <input class="file-path validate" type="text">
+            </div>
+         </div>
+
+         <input type="hidden" name="_csrf" value="{{csurf}}">
+
+         <button type="submit" class="btn">Сохранить изменения</button>
+      </form>
+      {{#if @root.isAuthor}}
+         <a href="/interactives/add/{{user._id}}">Создать интерактивную книгу</a>
+      {{else}}
+         <p>
+         <a href="/verification/{{user._id}}">Стать автором</a>
+      </p>   
+      {{/if}}
+      
+   </div>
+</div>

@@ -59,6 +59,53 @@ window.onload = function () {
       addShowPassFunctional($newPassword);
    }
 
+
+   const $interactives = document.querySelector('#interactives')
+   if ($interactives) {
+      $interactives.addEventListener('click', (event) => {
+         if (event.target.classList.contains('js-allow')) {
+            const id = event.target.dataset.id
+            const variant = event.target.dataset.variant
+            const csrf = event.target.dataset.csrf
+   
+            fetch('/interactives/allow/' + id +'/'+ variant, {
+               method: 'post',
+               headers: {
+                  'X-XSRF-TOKEN': csrf,
+               },
+            })
+            .then((res) => res.json())
+            .then((interactives) => {
+               const html = interactives
+                  .map((i) => {
+                     return `
+                     <div class="row">
+                     <div class="card-container">
+                        <div class="card">
+                           <div class="card-content">
+                              <h2 class="card-title">${i.title}</h2>
+                              <span >${i.content}</span>
+                           </div>
+                            <button type="submit" class="btn btn-primary js-allow" data-id="${i.id}"
+                                 data-csrf="${csrf}" data-variant="1" disabled>${i.variant1}</button>
+                                 <b>${i.variant1Allow}</b>
+                                 <br>
+                                 <button type="submit" class="btn btn-primary js-allow" data-id="${i.id}"
+                                 data-csrf="${csrf}" data-variant="2" disabled>${i.variant2}</button>
+                                 <b>${i.variant2Allow}</b>
+                        </div>
+                     </div>
+                  </div>
+                  `
+                  })
+                  .join('')
+               $interactives.innerHTML = html
+            })
+      }
+         }
+      )
+   }
+
    M.Tabs.init(document.querySelectorAll(".tabs"));
    var elems = document.querySelectorAll('select');
       var instances = M.FormSelect.init(elems, {});

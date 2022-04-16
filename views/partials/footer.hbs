@@ -1,4 +1,66 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="/app.js"></script>
 
-<footer></footer>
+<footer class="page-footer darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul class="footer-links-list">
+                  {{#if isHome}}
+         <li class="active"><a href="/">Главная</a></li>
+         {{else}}
+         <li><a href="/">Главная</a></li>
+         {{/if}}
+
+        
+         {{#if isBooks}}
+         <li class="active"><a href="/books">Книги</a></li>
+         {{else}}
+         <li><a href="/books">Книги</a></li>
+         {{/if}}
+
+         {{#if isAuth}}
+
+         {{#if isProfile}}
+         <li class="active"><a href="/profile">Профиль</a></li>
+         {{else}}
+         <li><a href="/profile">Профиль</a></li>
+         {{/if}}
+
+          {{#if isAdd}}
+         <li class="active"><a href="/add">Добавить книгу</a></li>
+         {{else}}
+         <li><a href="/add">Добавить книгу</a></li>
+         {{/if}}
+
+         {{#if idApplications}}
+         <li class="active"><a href="/applications">Заявки</a></li>
+         {{else}}
+         <li><a href="/applications">Заявки</a></li>
+         {{/if}}
+
+         <li><a href="auth/logout">Выйти</a></li>
+
+         {{else}}
+         {{#if isLogin}}
+         <li class="active"><a href="/auth/login#login">Вход</a></li>
+         {{else}}
+         <li><a href="/auth/login#login">Вход</a></li>
+         {{/if}}
+
+         {{/if}}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2022 Copyright Text
+            </div>
+          </div>
+        </footer>
