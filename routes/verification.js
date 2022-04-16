@@ -5,6 +5,7 @@ const User = require("../models/user");
 
 router.get('/:id', auth, (req, res) => {
     res.render('verification', {
+       layout: 'main',
        title: 'Верификация',
        isVerification: true,
     })

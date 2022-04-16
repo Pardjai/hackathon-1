@@ -44,10 +44,6 @@ nav{
     object-fit: cover;
 }
 
-.wrapper{
-    width: 75%;
-    margin: 0 auto;
-}
 
 .avatar-container{
     display: flex;
