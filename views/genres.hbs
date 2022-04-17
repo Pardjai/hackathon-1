@@ -1,0 +1,11 @@
+<div  class="genres all-genres">
+   {{#each genres}}
+      <div class="row">
+          <a href="/books/genres/{{genre}}">
+            <div class="card-panel teal card-genre-{{genre}}">
+               <b>{{genre}}</b>
+            </div>
+            </a>
+      </div>
+   {{/each}}
+</div>

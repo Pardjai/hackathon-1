@@ -1,2 +1,37 @@
-<h1>Страница</h1>
+<h2>Жанры</h2>
+<div class="genres">
+   {{#each genres}}
+      <div class="row">
+          <a href="/books/genres/{{genre}}">
+            <div class="card-panel teal card-genre-{{genre}}">
+               <b>{{genre}}</b>
+            </div>
+            </a>
+      </div>
+   {{/each}}
+   <div class="row">
+          <a href="/books/genres/">
+            <div class="card-panel teal card-genre-all">
+               <b>Все жанры</b>
+            </div>
+            </a>
+      </div>
+</div>
 
+<h2>Новые</h2>
+<div class="news">
+    {{#each news}}
+   <div class="row">
+      <div class="card-container">
+         <div class="card">
+            <div class="card-content">
+               <h2 class="card-title">{{title}}</h2>
+               <span class="author">{{author}}</span>
+            </div>
+            <div class="card-action actions-btn">
+               <a href="/books/{{_id}}" target="_blank">Открыть</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   {{/each}}

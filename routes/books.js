@@ -16,6 +16,45 @@ router.get('/', async (req, res) => {
    }
 })
 
+router.get('/genres', async(req, res) => {
+   res.render('genres', {
+      title: 'Жанры',
+      genres: [
+         {
+             genre: 'Детектив'
+         },
+         {
+             genre: 'Фантастика'
+         },
+         {
+             genre: 'Роман'
+         },
+         {
+             genre: 'Приключения'
+         },
+         {
+             genre: 'Учебники'
+         },
+         {
+             genre: 'Поэзия'
+         },
+         {
+             genre: 'Детские'
+         },
+         
+     ]
+  })
+})
+
+router.get('/genres/:genre', async (req, res) => {
+   const books = await Book.find({genre: req.params.genre})
+
+   res.render('books', {
+      title: `Книги жанра ${req.params.genre}`,
+      books
+   })
+})
+
 router.get('/:id', async (req, res) => {
    // конструкция "/:id" передаёт часть url после слеша (и до следующего слеша, если он есть) в качестве значения параметра "id" в request (request.params.id)
    try {
