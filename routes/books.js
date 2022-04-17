@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
    } catch (e) {
       console.log(e)
    }
-})
+}) 
 
 router.get('/genres', async(req, res) => {
    res.render('genres', {
