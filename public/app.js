@@ -1,4 +1,20 @@
 window.onload = function () {
+   const swiper = new Swiper('.swiper', {
+      pagination: {
+         el: '.swiper-pagination',
+         clickable: true
+      }, 
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+         delay: 5000,
+         disableOnInteraction: false
+      },
+      speed: 700
+   });
+
+
    const $alertConfirmPassword = document.querySelector(
       "#alertConfirmPassword"
    );
@@ -105,6 +121,9 @@ window.onload = function () {
          }
       )
    }
+
+
+
 
    M.Tabs.init(document.querySelectorAll(".tabs"));
    var elems = document.querySelectorAll('select');
