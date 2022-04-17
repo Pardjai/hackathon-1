@@ -1,5 +1,4 @@
 const { Router } = require('express')
-const req = require('express/lib/request')
 const interactive = require('../models/interactive')
 const router = Router()
 const Interactive = require('../models/interactive')
@@ -77,9 +76,7 @@ router.post('/add', async (req, res) => {
    const interactive = await Interactive.findById(req.params.id)
    interactive[`action${req.params.num}`].Count += 1
    await interactive.save()
-    res.redirect('interactives', {
-       title: 'Интерактивы'
-    })
+    res.redirect(`/interactives/${req.params.id}`)
  })
 
 module.exports = router

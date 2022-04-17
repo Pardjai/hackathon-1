@@ -19,27 +19,26 @@
 
       <ul class="profile-nav">
          <div class="section">
-            <li><a href="/books">Книги</a></li>
-         <li><a href="/add">Добавить книгу</a></li>
-         <li><a href="/interactives">Интерактивы</a></li>
+            <li><a href="/books">Китаплар</a></li>
+         <li><a href="/add">Китапны кушырга</a></li>
+         <li><a href="/interactives">Интерактивлар</a></li>
           {{#if @root.isAuthor}}
-            <li><a href="/interactives/add/{{user._id}}">Создать интерактивную
-                  книгу</a></li>
+            <li><a href="/interactives/add/{{user._id}}">Интерактив ясарга</a></li>
          {{/if}}
          </div>
          {{#if @root.isAuthor}}
          {{else}}
          
          <div class="section">
-               <li><a href="/verification/{{user._id}}">Стать автором</a></li>
-               <li><a href="/firstSteps" target="_blank">Первые шаги</a></li>
+               <li><a href="/verification/{{user._id}}">Автор булу</a></li>
+               <li><a href="/firstSteps" target="_blank">Беренче адымнар</a></li>
          </div>
          {{/if}}
          
          <div class="section">
-            <li><a href="/settings">Настройки</a></li>
+            <li><a href="/settings">Көйләнеш</a></li>
             {{#if isAuth}}
-               <li class="logout"><a href="auth/logout"><b>Выйти</b></a></li>
+               <li class="logout"><a href="auth/logout"><b>Чыгарга</b></a></li>
             {{/if}}
          </div>
       </ul>

@@ -1,10 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    color: #726e6e;
 }
 
 body{
-    color: aliceblue;
 
 
     min-height: 100vh;
@@ -12,6 +12,10 @@ body{
     display: flex;
     flex-direction: column;
 
+}
+
+nav{
+    /* margin-bottom: 2px; */
 }
 
 .container{
@@ -22,16 +26,18 @@ body{
 .wrapper{
     width: 100%;
     flex-grow: 1;
-    background: #726e6e url('/images/54545454.jpg');
+    background: rgb(223, 223, 223);
     background-size: cover;
 }
 
 
 body .wrapper > .container{
     padding: 50px;
-    background: #494747a8;
+    background: #fff;
     background-size: cover;
 height: 100%;
+margin: 10px auto;
+border-radius: 10px;
 }
 
 nav .container{
@@ -123,7 +129,7 @@ display: inline-block;
 .profile-nav a{
     text-align: center;
     font-size: 1.2rem;
-    color: aliceblue;
+    color: #212121;
     padding: .5rem;
     display: inline-block;
     width: 100%;
@@ -139,7 +145,7 @@ display: inline-block;
 }
 
 .profile-nav .logout a{
-    color: rgba(214, 51, 51, 0.747);
+    color: rgba(214, 51, 51, 0.747) !important;
 }
 
 footer a{
@@ -164,7 +170,7 @@ nav form{
 }
 
 .page-footer, nav{
-    background-color: #212121 ;
+    background: rgb(223, 223, 223);
 }
 
 #accessCheckbox{
