@@ -1,0 +1,100 @@
+<section style="background-color: #eee;">
+      <div id="interactive">
+          {{#ifeq interactive.authorId._id @root.user._id}}
+
+
+            <div id="interactive">
+         
+          <div class="card-body" data-mdb-perfect-scrollbar="true" style="min-height: 400px">
+              {{#if interactive.oldMessages}}
+              {{#each interactive.oldMessages}}
+              {{#if content}}
+              <div class="interactive-content" style="align-self: flex-end;">
+                <p>{{content}}</p>
+              </div>
+              <div class="interactive-answer" style="align-self: flex-start;">
+                        <p>{{answer}}</p>
+              </div>
+              {{/if}}
+             {{/each}}
+              {{/if}}
+              {{#if interactive.newMessages.content}}
+              <div class="interactive-content" style="align-self: flex-end;">
+                <p>{{interactive.newMessages.content}}</p>
+              </div>
+              {{/if}}
+</div>
+
+          </div>
+          <div >
+            <form action="/interactives/write/{{interactive._id}}" method="POST" class="interactive-auth-input">
+            <div class="input-field col s12">
+          <textarea id="content" name="content" class="materialize-textarea"></textarea>
+          <label for="content">Содержание отрывка</label>
+      
+      <span class="helper-text" data-error="Введите содержание отрывка"></span>
+   </div>
+   <div class="interactive-auth-actions">
+   <div class="input-field">
+      <input id="variant1" name="variant1" type="text" class="validate" required>
+      <label for="variant1">Вариант 1</label>
+      
+   </div>
+   <div class="input-field">
+      <input id="variant2" name="variant2" type="text" class="validate" required>
+      <label for="variant2">Вариант 2</label>
+      
+   </div>
+   <input type="hidden" name="_csrf" value="{{csurf}}">
+   <button type="submit" class="btn">Отправить</button>
+   </div>
+             </form>
+
+             
+          </div>
+        </div>
+
+
+
+        {{else}}
+
+
+
+        <div  id="interactive">
+          <div class="card-body" data-mdb-perfect-scrollbar="true" style="min-height: 400px">
+              {{#if interactive.oldMessages}}
+              {{#each interactive.oldMessages}}
+              {{#if content}}
+              <div class="user interactive-content" style="align-self: flex-start;">
+                <p>{{content}}</p>
+              </div>
+              <div class="user interactive-answer" style="align-self: flex-end;">
+                        <p>{{answer}}</p>
+              </div>
+              {{/if}}
+             {{/each}}
+              {{/if}}
+              {{#if interactive.newMessages.content}}
+              <div class="interactive-content" style="align-self: flex-start;">
+                <p>{{interactive.newMessages.content}}</p>
+              </div>
+              {{/if}}
+</div>
+<div >
+<form action="/interactives/mark/{{interactive._id}}/1" method="POST" class="interactive-auth-input">
+        <input type="hidden" name="_csrf" value="{{csurf}}">
+   <button type="submit" class="btn btn-mark">Выбрать</button>
+        <span class="mark-span">{{interactive.action1.action}}</span>
+             </form>
+             <hr>
+<form action="/interactives/mark/{{interactive._id}}/2" method="POST" class="interactive-auth-input" style="margin-top:0;">
+        <input type="hidden" name="_csrf" value="{{csurf}}">
+   <button type="submit" class="btn btn-mark">Выбрать</button>
+        <span class="mark-span">{{interactive.action2.action}}</span>
+             </form>
+
+             
+          </div>
+{{/ifeq}}
+      </div>
+</section>

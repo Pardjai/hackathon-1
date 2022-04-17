@@ -7,18 +7,11 @@
       <div class="card-container">
          <div class="card">
             <div class="card-content">
-               <h2 class="card-title">{{title}}</h2>
-               <span >{{content}}</span>
+               <a href="/interactives/{{_id}}">
+                  <h2 class="card-title">{{title}}</h2>
+               </a>
+               <span >{{authorId.name}}</span>
             </div>
-             {{#if @root.isAuth}}
-             <button type="submit" class="btn btn-primary js-allow" data-id="{{id}}"
-                  data-csrf="{{@root.csurf}}" data-variant="1">{{variant1}}</button>
-                  <b>{{variant1Allow}}</b>
-                  <br>
-                  <button type="submit" class="btn btn-primary js-allow" data-id="{{id}}"
-                  data-csrf="{{@root.csurf}}" data-variant="2">{{variant2}}</button>
-                  <b>{{variant2Allow}}</b>
-               {{/if}}
          </div>
       </div>
    </div>

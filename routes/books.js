@@ -59,7 +59,6 @@ router.get('/:id', async (req, res) => {
    // конструкция "/:id" передаёт часть url после слеша (и до следующего слеша, если он есть) в качестве значения параметра "id" в request (request.params.id)
    try {
       const book = await Book.findById(req.params.id) // findByID соответственно находит курс в базе по его id
-
       res.render('book', {
          title: book.title,
          author: book.author,

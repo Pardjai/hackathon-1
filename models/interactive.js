@@ -4,22 +4,40 @@ const interactiveSchema = new Schema({
         type: String,
         required: true,
      },
-     content: {
-         type: String,
+     oldMessages:[
+         {
+             content: {
+                 type: String,
+             },
+             answer: {
+                 type: String,
+             }
+         }
+     ],
+     newMessages:
+         {
+             content: {
+                 type: String,
+             }
+         },
+     action1:{
+         action: String,
+         Count: {
+             type: Number,
+             default: 0
+         }
      },
-     variant1: String,
-     variant2: String,
-     variant1Allow: {
-         type: Number,
-         default: 0
-     },
-     variant2Allow:  {
-        type: Number,
-        default: 0
+     action2:{
+        action: String,
+        Count: {
+            type: Number,
+            default: 0
+        }
     },
      authorId: {
         type: Schema.Types.ObjectId,
         required: true,
+        ref: 'User'
      },
 })
 

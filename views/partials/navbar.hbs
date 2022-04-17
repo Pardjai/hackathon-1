@@ -10,17 +10,18 @@
          {{#if isAuth}}
 
          {{#if isProfile}}
-         <li class="active"><a href="/profile">Профиль</a></li>
+         <li class="active"><a href="/profile" class="user-href"><i class="fa fa-user"></i></a></li>
          {{else}}
-         <li><a href="/profile">Профиль</a></li>
+         <li><a href="/profile" class="user-href"><i class="fa fa-user"></i></a></li>
          {{/if}}
 
           
-
+      {{#if isModerator}}
          {{#if isApplications}}
          <li class="active"><a href="/applications">Заявки</a></li>
          {{else}}
          <li><a href="/applications">Заявки</a></li>
+         {{/if}}
          {{/if}}
 
          

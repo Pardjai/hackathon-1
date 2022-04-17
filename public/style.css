@@ -22,12 +22,14 @@ body{
 .wrapper{
     width: 100%;
     flex-grow: 1;
-    background: #726e6e;
+    background: #726e6e url('/images/54545454.jpg');
+    background-size: cover;
 }
+
 
 body .wrapper > .container{
     padding: 50px;
-    background: #494747;
+    background: #494747a8;
     background-size: cover;
 height: 100%;
 }
@@ -36,9 +38,25 @@ nav .container{
     height: 100%;
 }
 
-.brand-logo{
-    max-width: 64px;
+.brand-logo, .fa-user{
+    width: 64px;
     height: 64px;
+}
+
+.fa-user{
+    flex: 0 0 100%;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.user-href{
+    display: flex;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 32px;
+    top: 20px;
+    padding: 0;
 }
 
 .brand-logo img{
@@ -204,3 +222,102 @@ footer{
       max-width: 100%;
       object-fit: cover;
   }
+
+  .auth .row{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .auth .row > div.col{
+    margin-left: 0;
+}
+
+  .tabs{
+    margin: 0;
+    background: rgba(114, 112, 112, 0.418);
+  }
+
+  #interactives .card-title{
+      margin-top: 0;
+  }
+
+  #interactive *{
+      color: #000;
+  }
+
+  .interactive-content{
+      background: rgb(153, 150, 150);
+      padding: 20px;
+      border-radius: 10px 0 7px 10px;
+  }
+
+  #interactive .card-body{
+        display: flex;
+        flex-direction: column;
+  }
+
+  .interactive-answer{
+        background: rgb(104, 102, 102);
+        padding: 20px;
+      border-radius: 0 10px  10px 7px ;
+  }
+
+  .user.interactive-answer{
+    background: rgb(153, 150, 150);
+    border-radius: 10px 0 7px 10px;
+}
+
+  .user.interactive-content{
+    background: rgb(104, 102, 102);
+    border-radius: 0 10px  10px 7px ;
+  }
+
+.interactive-content,  .interactive-answer{
+    max-width: 40%;
+}
+.interactive-auth-input{
+    margin-top: 20px;
+}
+
+  .interactive-answer p,  .interactive-content p{
+      padding: .5rem;
+  }
+
+  .interactive-auth-input{
+      display: flex;
+      
+  }
+
+  .interactive-auth-input{
+      background: rgb(138, 136, 136);
+      
+  }
+
+  form.interactive-auth-input label{
+    color:rgba(66, 65, 65, 0.644) !important;
+  }
+
+  .interactive-auth-input > .input-field{
+      flex: 1 0 70%;
+      padding: 1rem;
+  }
+
+  .interactive-auth-actions{
+      flex: 0 1 30%;
+      border-left: #eee 1px solid;
+      padding: 1rem;
+  }
+
+  #interactive h6, #interactive h5{
+      padding: 1rem;
+  }
+
+  .btn-mark{
+      margin-right: 1rem;
+  }
+
+.mark-span{
+    display: flex;
+    align-items: center;
+}
